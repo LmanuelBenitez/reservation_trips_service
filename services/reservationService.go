@@ -31,6 +31,7 @@ func (service *ReservationService) ReserveTrip(tripData *models.RequestTrip) (*m
 	response, err := service.ReservationRepository.MakeReservation(tripData)
 	if err != nil {
 		logger.Error("ReservationService", "ReserveTrip", err.Error())
+		return response, err
 	}
 
 	err = service.RegisterLogsService.UpdateLog(response.Status, tripData.Id)

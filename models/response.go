@@ -1,8 +1,9 @@
 package models
 
 type Response struct {
-	Message    string
-	Details    string
-	Status     int
-	ApiVersion string
+	Message        string
+	Details        string
+	DriverResponse Driver
+	Status         int
+	ApiVersion     string
 }
