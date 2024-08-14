@@ -6,8 +6,8 @@ type Configuration struct {
 }
 
 type Server struct {
-	Port int    `yaml:"port" ENV:"SERVER_PORT"`
-	Cors string `yaml:"cors" ENV:"SERVER_CORS"`
+	Port int      `yaml:"port" ENV:"SERVER_PORT"`
+	Cors []string `yaml:"cors" ENV:"SERVER_CORS"`
 }
 
 type Database struct {
