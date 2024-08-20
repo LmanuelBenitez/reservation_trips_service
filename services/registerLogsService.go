@@ -16,11 +16,21 @@ func NewRegisterLogsService(registerLogsRepository *repositories.RegisterLogsRep
 }
 
 func (service *RegisterLogsService) CreateLog(tripData *models.RequestTrip) error {
+
 	err := service.RegisterLogsRepository.CreateLogTrip(tripData)
-	return err
+	if err != nil {
+		return err
+	}
+
+	return nil
 }
 
 func (service *RegisterLogsService) UpdateLog(status int, tripId string) error {
+
 	err := service.RegisterLogsRepository.UpdateLogTrip(status, tripId)
-	return err
+	if err != nil {
+		return err
+	}
+
+	return nil
 }

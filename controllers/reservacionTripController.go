@@ -33,5 +33,5 @@ func (controller *ReservationTripController) GetReservation(ctx echo.Context) er
 		logger.Error("ReservationTripController", "GetReservation", err.Error())
 	}
 
-	return ctx.JSON(response.Status, response.Message)
+	return ctx.JSON(response.Status, response)
 }

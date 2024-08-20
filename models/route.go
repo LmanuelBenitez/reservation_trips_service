@@ -7,5 +7,5 @@ type Route struct {
 	Name           string
 	Pattern        string
 	HandlerFunc    echo.HandlerFunc
-	MiddlewareFunc echo.HandlerFunc
+	MiddlewareFunc echo.MiddlewareFunc
 }
