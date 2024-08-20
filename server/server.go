@@ -31,7 +31,7 @@ func invokeContainer() {
 	setupRoutes(container)
 	err := container.Invoke(func(config *models.Configuration) {
 		setupMiddleware(config)
-		initServer(config.Server.Port)
+		startServer(config.Server.Port)
 	})
 
 	if err != nil {
@@ -75,6 +75,6 @@ func setupMiddleware(configuration *models.Configuration) {
 		middleware.Logger)
 }
 
-func initServer(port int) {
+func startServer(port int) {
 	server.Logger.Fatal(server.Start(fmt.Sprintf("%d:", port)))
 }
